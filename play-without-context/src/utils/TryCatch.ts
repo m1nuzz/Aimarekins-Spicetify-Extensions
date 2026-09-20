@@ -1,7 +1,7 @@
 export function tryCatch<A extends unknown[], R>(
 	fn: (...args: A) => R,
 	...args: A
-): [hasErrored: true, returned: R] | [hasErrored: false, error: unknown] {
+): [succeeded: true, returned: R] | [succeeded: false, error: unknown] {
 	try {
 		return [true, fn(...args)]
 	} catch (e) {
